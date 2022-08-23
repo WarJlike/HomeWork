@@ -6,7 +6,7 @@ int[] Method1(int a)
     int[] array = new int[a];
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(1,10);
+        array[i] = new Random().Next(100,1000);
     }
 return(array);
 }
