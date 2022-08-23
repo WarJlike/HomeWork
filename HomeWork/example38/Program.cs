@@ -1,15 +1,17 @@
 ﻿Console.WriteLine("Введите размер массива - ");
 int N = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите минимально допустимое число массива - ");
-double min = double.Parse(Console.ReadLine());
+int min = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите максимально допустимое число массива - ");
-double max = double.Parse(Console.ReadLine());
+int max = int.Parse(Console.ReadLine());
 double[] Method1(int a)
 {
     double[] array = new double[a];
     for (int i = 0; i < array.Length; i++)
     {
         array[i] = new Random().NextDouble();
+        int num = new Random().Next(min, max);
+        array[i] = array[i] + num;
     }
 return(array);
 }
