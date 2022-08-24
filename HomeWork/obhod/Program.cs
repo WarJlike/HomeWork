@@ -36,7 +36,9 @@ int[] Method3( int[,] mas)
 {
     int[] line = new int[mas.GetLength(0) * mas.GetLength(1)];
     int a = 0;
-    for(int s = 0; s < 3; s++)
+    int min = mas.GetLength(0);
+    if(mas.GetLength(1) < mas.GetLength(0)) min = mas.GetLength(1);
+    for(int s = 0; s < min/2; s++)
     {
     for (int j = 0 + s; j < mas.GetLength(1) -s; j++)
     {
@@ -65,5 +67,4 @@ int[] Method3( int[,] mas)
 
 return line;
 }
-
 Console.WriteLine($"{String.Join(", ", Method3(pro))}");
