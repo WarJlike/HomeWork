@@ -38,6 +38,8 @@ int[] Method3( int[,] mas)
     int a = 0;
     int min = mas.GetLength(0);
     if(mas.GetLength(1) < mas.GetLength(0)) min = mas.GetLength(1);
+    if(min % 2 > 0) min = min +1;
+    
     for(int s = 0; s < min/2; s++)
     {
     for (int j = 0 + s; j < mas.GetLength(1) -s; j++)
@@ -45,26 +47,27 @@ int[] Method3( int[,] mas)
         line[a] = mas[mas.GetLength(0) - 1 - s, j];
         a++;
     }
-    
-     for (int i = mas.GetLength(0) -2 -s ; i >= 0 +s; i--)
+    if(a >= line.Length - 1) break;
+     for (int i = mas.GetLength(0) -2 -s ; i >= s; i--)
     {
         line[a] = mas[i, mas.GetLength(1) - 1 - s];
         a++;
     }
-    
-     for (int j = mas.GetLength(1) -2 - s; j >= 0 +s; j--)
+    if(a >= line.Length - 1) break;
+     for (int j = mas.GetLength(1) -2 - s; j >= s; j--)
     {
-        line[a] = mas[0 + s, j];
+        line[a] = mas[s, j];
         a++;
     }
-    
+    if(a >= line.Length - 1) break;
      for (int i = 1 + s; i < mas.GetLength(0) - 1 -s; i++)
     {
-        line[a] = mas[i, 0 + s];
+        line[a] = mas[i, s];
         a++;
     }
+    if(a >= line.Length - 1) break;
     }
-
+    
 return line;
 }
 Console.WriteLine($"{String.Join(", ", Method3(pro))}");
