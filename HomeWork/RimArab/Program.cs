@@ -14,11 +14,6 @@ int Convert(string str)
         else if (str[i] == 'V') arab[i] = 5;
         else if (str[i] == 'I') arab[i] = 1;
         else return -1;
-
-
-
-
-
     }
     for (int i = 1; i < arab.Length; i++)
     {
