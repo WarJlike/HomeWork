@@ -1,14 +1,15 @@
 ﻿Console.WriteLine("Введите число");
 int n = int.Parse(Console.ReadLine());
 
-void SqrtArray(int a)
+void SqrtArray(int b)
 {
-    for (int i = 0; i < a; i++)
+    int a = b;
+    int count = -1;
+    for (int i = 1; b >= 0; i = i + 2)
     {
-        if(i * i <= a && (i+1)*(i+1) > a)
-        {
-           Console.WriteLine($"{i} равен корню из {a}");
-        }
+        b-= i;
+        count++;
     }
+    Console.WriteLine($"Целочисленный корень из {a} равен {count}");
 }
 SqrtArray(n);
