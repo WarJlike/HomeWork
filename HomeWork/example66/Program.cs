@@ -10,7 +10,7 @@ int Method(int N, int M)
     sum = N + Method(N + 1, M);
     return sum;
 
-    //return N < 1 ? 0 : sum = (N % 10) + Method(N/10);
+    //return N > M ? 0 : sum = N + Method(N + 1, M);
 }
 
 Console.WriteLine(Method(n, m));
