@@ -1,6 +1,16 @@
-﻿//Console.WriteLine("Введите скобочную последовательность - ");
-string[] posledovatelnost = new string[]{"(","(","[","{","}","{","}","]",")",")"};
+﻿Console.WriteLine("Введите скобочную последовательность - ");
+string posledovatelnost = Console.ReadLine();
+//string[] posledovatelnost = new string[]{"(","(","[","{","}","{","}","]",")",")"};
 
+string[] Translate( string test)
+{
+string[] posledovatelnost = new string[test.Length];
+for (int i = 0; i < test.Length; i++)
+{
+    posledovatelnost[i] = $"{test[i]}";
+}
+return posledovatelnost;
+}
 
 void ProverkaPosledovatelnosti( string[] pos)
 {
@@ -27,4 +37,4 @@ void ProverkaPosledovatelnosti( string[] pos)
 if( item1 == "1") Console.WriteLine("Последовательность правильная");
 else Console.WriteLine("Последовательность не правильная");  
 }
-ProverkaPosledovatelnosti(posledovatelnost);
+ProverkaPosledovatelnosti(Translate(posledovatelnost));
